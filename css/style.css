@@ -52,19 +52,17 @@ img {
 
 
 section {
-	margin:0 auto 40px;
-	clear: both;
-	}/* セクションのセンタリングと行間 */
+    margin:0 auto 40px;
+    clear: both;
+    }/* セクションのセンタリングと行間 */
 
 
-/*.fa-ul {
-	font-family: FontAwesome;
-	font-size: 1.3em;
-	color: #666;
-	margin-bottom: 5px;
+.fa-ul {
+    font-family: FontAwesome;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
 }/* awesome設定 */
-
-
 
 
 /* header
@@ -607,6 +605,46 @@ textarea {
 
 
 
+
+
+/* canvas（javascriptカラー読み取り用/非表示）
+        ------------------------------------------------------------------ */
+
+canvas {
+ display: none !important;
+}
+
+
+/* ランダムカラーバー(js)
+        ------------------------------------------------------------------ */
+.colorbar {
+    position: absolute;
+    padding: 0;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 10px;
+    margin: 0 auto;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 非表示⇒表示アニメーション(js) */
+.c_item {
+    opacity: 0;
+    transition: all 3s;
+    width: 10%;
+}
+
+
+/* アニメーション/ランダムカラーバー(js)
+        ------------------------------------------------------------------ */
+
+div.appear {
+    opacity: 1;
+}/* .c_itemから.appearに切り替えるてアニメーション表示させる*/
 
 
 
