@@ -1,0 +1,710 @@
+@charset:"UFF-8";
+
+
+/* 共通
+		------------------------------------------------------------------ */
+
+body {
+	font-size: 18px;
+	overflow: auto;
+	color: #333;
+	background: #fff;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+
+a:hover, .active{
+	text-decoration: underline;
+	color: #4682B4;
+}
+
+
+.logo a, a:hover, .active {
+	text-decoration: none;
+}
+/* h1ロゴのリンク */
+
+
+li {
+	list-style-type: none;
+}
+
+
+#container {
+	margin: 0;
+	padding: 0 1em;
+}/* h1とfooter以外に左右1emスペース */
+
+
+img {
+	height: auto;
+	border:0;
+	width: 100%;
+	max-width: 100%;
+}
+
+
+section {
+	margin:0 auto 40px;
+	clear: both;
+	}/* セクションのセンタリングと行間 */
+
+
+/*.fa-ul {
+	font-family: FontAwesome;
+	font-size: 1.3em;
+	color: #666;
+	margin-bottom: 5px;
+}/* awesome設定 */
+
+
+
+
+/* header
+		------------------------------------------------------------------ */
+
+header .header {
+	width: 100%;
+	padding: 0.5em 0em;
+	margin: 0;
+	background-color: rgb(51 51 51);
+	color: #FFF;
+}
+
+h1 {
+	font-size: 1em;
+	line-height: 0.5em;
+	font-family: 'Lobster', 'cursive';
+	letter-spacing: 0.1em;
+	padding-left: 0.5em;
+	color: #FFF;
+}/*タイトルヘッダー*/
+/* 位置固定、幅100% */
+
+
+header {
+	position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+        z-index: 98;
+}/* ステッキーヘッダー。ヘッダー固定、ページ開始位置調整！ */
+
+
+#mainImg img {
+	width: 100%;
+	max-width: 100%;
+}/*windowサイズに合わせて可変*/
+
+
+
+
+/* メイン画像をじわっと表示させる */
+#mainImg img {
+	/* じわっと画像が表示される */
+ 	animation: fadeIn 3s ease 0s 1 normal;
+    -webkit-animation: fadeIn 3s ease 0s 1 normal;
+}
+
+/* じわっと画像が表示される ---------　一度追加していたら不要*/
+@keyframes fadeIn { /*名前をそろえる*/
+    0% {opacity: 0} /* 始め */
+    100% {opacity: 1} /* 終わり */
+}
+
+/*古いブラウザ用　---------　一度追加していたら不要*/
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+
+
+
+
+
+/* header ハンバーガーメニューCSS
+		------------------------------------------------------------------ */
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	background: #333;
+}
+/* align:items…コンテナ内の交差軸のデフォルトをセンターそろえ*/
+
+.logo {
+	font-size: 24px;
+}
+
+/* ここからハンバーガー記述 */
+
+
+.drawer-hidden {
+	display: none;	
+	}
+	/* チェックボックスは非表示 */
+
+
+
+.drawer-open {
+	display: flex;
+	height: 60px;
+	width: 60px;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 100;/* 重なりを一番上に */
+	cursor: pointer;
+}
+/* ハンバーガーの設置スペース */
+
+
+
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 25px;
+	border-radius: 3px;
+	background: #FFF;
+	transition: 0.5s;
+	position: absolute;
+}
+/* ハンバーガーメニューのアイコン */
+/* backgroundは三の色 */
+
+
+
+.drawer-open span:before {
+	bottom: 8px;
+}
+/* 三本線：一番上の位置 */
+
+
+
+.drawer-open span:after {
+	top: 8px;
+}
+/* 三本線：一番下の位置 */
+
+
+
+#drawer-check:checked ~ .drawer-open span {
+	background: rgba(255,255,255,0);
+}
+/* アイコンがクリックされたら真ん中の線を透明になる */
+
+
+
+#drawer-check:checked ~ .drawer-open span:before {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+/* transform:rotate;は２Dの回転角度を指定 */
+/* この場合は45度回転 */
+
+
+#drawer-check:checked ~ .drawer-open span::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+/* アイコンがクリックされたら×になる */
+/* transform: rotate(-45deg)…45度２D回転 */
+/* span::after... */
+
+
+.drawer-content {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 100%;/* メニューを画面の外に飛ばす！ */
+	z-index: 99;
+	background: #333;
+	transition: 1.5s;
+	letter-spacing: 0.1em;
+	line-height: 0.25em;
+}
+/* メニューのデザイン */
+/* transitionは時間的変化。疑似要素に定義*/
+/*bgは出てきたメニューのbg色  */
+
+
+.drawer-list li {
+	padding: 0.5em;
+}
+/* リンクのレイアウト */
+
+#drawer-check:checked ~ .drawer-content {
+	left: 0;/* メニューを画面に入れる */
+}
+/* アイコンがクリックされたらメニューを表示 */
+/* ハンバーガーメニューend */
+
+
+.drawer-item a:hover, .active{
+	text-decoration: underline;
+}
+/* リンクのhover、active設定 */
+
+.drawer-item a {
+	color: #CCC;
+	text-decoration: none;
+}
+/* リンク色 */
+
+
+
+
+
+
+/* 角丸サーチ　
+		------------------------------------------------------------------ */
+
+header input {
+    font-family: FontAwesome\ 5 Free;
+    content: '\f002';
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    background-color: rgba(255,255,255,0);
+}/*Awesomeアイコンの設定*/
+
+
+input{
+	background-color: rgba(255,255,255,0);
+}
+
+.search_container {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2em;
+  width: 260px;
+  background-color: rgba(255,255,255,0.5);
+  overflow: hidden;
+  margin: 0 auto 3em;
+}
+
+.search_container input[type="text"] {
+  border :none;
+  height: 1.3em;/* 虫眼鏡アイコンサイズと合わせる */
+}
+
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+/* 虫眼鏡アイコン */
+.search_container button[type="submit"] {
+  cursor: pointer;
+  font-family: "FontAwesome";
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #333333;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline: none;
+}
+
+/*search end*/
+
+
+/* サーチの位置、テキストとセンタリング(完成)
+	------------------------------------------------------------------ */
+
+
+/* TOPの位置指定用 */
+#mainImg {
+	position: relative;
+}
+
+
+
+/* リード文 */
+#main p {
+	font-family: 'Mulish', sans-serif;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: rgba(0,0,0,1);
+	padding: 0 0 0.2em; 
+	margin: 0;
+	width: 100%;
+}
+
+/* リード文２ */
+
+#main span {
+	color: red;
+}
+
+
+
+#main {
+	margin: 0 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	width: 100%;
+}/* メイン画像と親子関係にすること！ */
+/* pは幅100％で折り返しちゃんとでる */
+
+
+/* gallery
+		------------------------------------------------------------------ */
+
+#gallery {
+	padding: 0;
+	overflow: auto;
+}
+/* floatの高さをとりもどす */
+
+#gallery section {
+	display: none;
+}
+
+#gallery li {
+	float: left;
+	width: calc(100%/3);
+	line-height: 0;
+}/*幅自動計算*/
+
+#gallery img {
+	width: 100%;
+	height: auto;
+}
+
+
+/* gallert hover anime */
+
+#gallery li{
+    background: #000;
+}
+/*背景色を黒*/
+
+
+#gallery img{
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    transition: .3s;
+}
+/*3秒かけてアニメ*/
+
+
+#gallery img:hover{
+    opacity: 0.5;
+}
+/*hoverしたら透かす*/
+
+
+
+
+
+
+/* MENU
+	------------------------------------------------------------------ */
+
+#menu {
+	width: 100%;
+}
+
+#menu h3 {
+	margin: 0;
+	padding: 20px;
+	font-size: 1.2em;
+	letter-spacing: 0.6em;
+}
+
+.item img {
+	display: block;
+	margin: 0 auto 5px;
+}
+
+
+.m_wrapper img {
+	border-radius: 4px;
+}
+
+.m_wrapper {
+	box-sizing: border-box;
+	display: block;
+	width: 300px;
+	text-align: center;
+}/*テキストと画像のメニューのコンテナ*/
+
+
+
+.w_wrapper:last-of-type {
+	padding-bottom: 0;
+	}/*最後の下余白を削除*/
+
+
+/* menu hover anime */
+
+section .m_wrapper img {
+    background: #000;
+}
+/*背景色を黒*/
+
+
+.m_wrapper img{
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    transition: .3s;
+}
+/*3秒かけてアニメ*/
+
+
+.m_wrapper img:hover{
+    opacity: 0.5;
+}
+/*hoverしたら透かす*/
+
+
+
+
+
+/* フッター
+		------------------------------------------------------------------ */
+
+.f_wrapper {
+	background-color: #000;
+	color: #ccc;
+	padding: 2em 1.5em 1.5em;
+	margin: 0 auto;
+}/* footerの余白 */
+
+#footer {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		vertical-align: bottom;
+		clear: both;
+		text-align: center;
+}
+
+#footer small {
+	padding: 0;
+}
+
+/* SNSアイコン */
+#footer .fa {
+	color:#cccccc;
+	font-size: 20px;
+}
+
+#footer ul {
+	display:flex;
+	padding-bottom: 1em;
+	margin: 0;
+
+}
+
+#footer li {
+	padding: 0.8em;
+}
+
+small {
+	letter-spacing: 0.2em;
+	line-height: normal;
+}/* htmlから継承されたline-heightスペースを削除 */
+
+
+
+
+/* landscape（ページ共通）
+		------------------------------------------------------------------ */
+#land h2,
+#wel h2,
+#about h2,
+#contact h2 {
+	font-size: 1.4em;
+	color: #666;
+	margin: 30px 0 30px 0px;
+	letter-spacing: 0.1em;
+	border-bottom: 1px solid #cccccc;
+	vertical-align: bottom;
+}/* タイトル設定 */
+
+
+#land,
+#wel {
+	margin-bottom: 40px;
+}/* セクション間の余白 */
+
+
+#land p,
+#wel p,
+#about p,
+#contact p {
+	color: #666;
+}
+
+/* about
+		------------------------------------------------------------------ */
+#contact form,
+#contact input,
+#contact textarea {
+	color: #666;
+	line-height: 1.4;
+}
+
+
+/*インプット要素の「name,email」属性にだけ、幅200pxを効かす*/
+#contact input[type="name"],
+#contact input[type="email"] {
+	width: 200px;
+}
+
+
+/*テキストエリアの横幅*/
+textarea {
+	width: 300px;
+	height: 100px;
+}
+
+
+
+
+
+/* landscape（個ページ）
+		------------------------------------------------------------------ */
+
+.fa-ul a:hover {
+	text-decoration: underline;
+}
+
+
+/* about us
+		------------------------------------------------------------------ */
+
+
+/* タイトル設定 */
+
+
+
+
+
+
+
+/* レスポンシブ設定：メディアクエリー（768px↑）ipad、kindle
+		------------------------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+
+
+	body {
+		font-size: 16px;
+	}
+	
+	
+	#mainImg {
+		width: 100%;
+	}
+
+	main,
+	footer {
+		padding: 0;
+		margin: 0 auto;
+	}
+
+
+#main p {
+	font-size: 4.5em;
+	font-weight: bold;
+	color: rgba(0,0,0,1);
+	padding: 0 0 0.3em; 
+	margin: 0;
+	width: 100%;
+}
+/* top画像文字の調整 */
+
+#sbtn {
+cursor: pointer;
+height: 50px;
+position: absolute; 
+right: 250px;/* アイコン左右の位置調整 */
+top: 0;
+background: none;
+color: #666;
+border: none;
+font-size: 20px;/* アイコンサイズ */
+}
+/* ボタンアイコン設定 */
+
+
+
+	/* menu
+	-----------------*/
+
+	.w_wrapper {
+		margin-top: 2em;
+		padding:0 1em;
+		}/*width変更する*/
+	
+	.w_wrapper:last-of-type {
+		margin-right: 0;
+	}/*最後の右余白を削除*/
+	
+	.menu-flex {
+		display: flex;
+		flex-wrap: wrap;
+	}/*  */
+
+
+/* フッター
+		------------------------------------------------------------------ */
+
+.f_wrapper {
+	background-color: #000;
+	color: #ccc;
+	padding: 2em 1.5em 1.5em;
+}/* footerの余白 */
+
+
+
+}
+/*@media end*/
+
+
+
+/* レスポンシブ設定：メディアクエリー（850px↑）pc
+		------------------------------------------------------------------ */
+
+@media screen and (min-width: 850px) {
+
+/* top画像上リード文 */
+#main p {
+	font-size: 4.5em;
+	font-weight: bold;
+	color: rgba(255,255,255,0.7);
+	padding: 0 0 0.3em; 
+	margin: 0;
+	width: 100%;
+}/*@media end*/
+
+
+

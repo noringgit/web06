@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- viewpointモバイル用必須 -->
+	<meta name="author" content="photostock">
+	<meta name="description" content="photo">
+	<meta name="keywords" content="photo">
+	<title>PHOTOSTOCK</title>
+	
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&display=swap" rel="stylesheet">
+
+<body id="top">
+
+
+
+<!-- //HEADER -->
+<header class="header">
+
+	
+	<div class="logo">
+      	<a href="index.html"><h1><i class="fa fa-camera-retro"></i>&nbsp;PhotoStock</h1></a>
+    </div>
+
+<!----------- ハンバーガーメニュー部分 --------------------->
+		<div class="drawer">
+
+
+			<!-- ハンバーガーメニューチェックボックス非表示 -->
+			<input type="checkbox" id="drawer-check" class="drawer-hidden">
+
+			<!-- ハンバーガーアイコン -->
+			<label for="drawer-check" class="drawer-open">
+				<span><span>
+			</label>
+
+
+			<!-- ドロアーメニュー -->
+			<nav class="drawer-content">
+				<ul class="drawer-list">
+					<li class="drawer-item"><a href="landscape/index.html">Landscape</a>
+					</li>
+					<li class="drawer-item"><a href="#">Sky</a>
+					</li>
+					<li class="drawer-item"><a href="#">Flower</a>
+					</li>
+					<li class="drawer-item"><a href="#">Animal</a>
+					</li>
+					<li class="drawer-item"><a href="#">Life</a>
+					</li>
+					<li class="drawer-item"><a href="#">Art</a>
+					</li>
+					<li class="drawer-item">&nbsp;</li>
+					<li class="drawer-item"><a href="index.html">|&nbsp;TOP&nbsp;|</a></li>
+					<li class="drawer-item"><a href="#">|&nbsp;FAQ&nbsp;|</a></li>
+					<li class="drawer-item"><a href="about/index.html">|&nbsp;PhotoStockについて&nbsp;|</a></li>
+					<li class="drawer-item"><a href="#">|&nbsp;プライバシーポリシー&nbsp;|</a></li>
+					<li class="drawer-item">&nbsp;</li>
+					<li class="drawer-item"><a href="#">|&nbsp;ログイン&nbsp;|</a></li>
+					
+					<li class="drawer-item"><a href="#">*はじめての方はこちら*</a></li>
+				</ul>
+			</nav>
+      	</div>
+<!----------- ハンバーガーメニュー部分 end --------------------->
+</header>
+
+<!-- //HEADER -->
+
+<main>
+<div id="container" ontouchstart=""><!-- スマホ対応 -->
+	
+	<div id="mainImg">
+		<img src="images/main.jpg" alt="PhotoStock">
+				
+				<div id="main">
+					<p>FOR YOUR <span>C</span>REATION</p>
+					<!-- search form -->
+					<div id="search">
+						<form id="form" action="#" method="get" class="search_container">
+							<input id="sbox" name="search" type="text" placeholder="photo search">
+							<button type="submit"><i class="fas fa-search"></i></button>
+						</form>
+					</div>
+	<!-- //search form -->
+				</div>
+	<!-- //main -->
+	</div>
+	<!-- //mainImg -->
+
+
+	<!-- GALLERY -->
+	<section id="category">	
+		<ul id="gallery">
+			<li><a href="landscape/l_1.html"><img src="images/l_01.jpg" width="426" alt="landscape"></a></li>
+			<li><img src="images/p_01.jpg" width="426" alt="Flower"></li>
+			<li><img src="images/li_01.jpg" width="426" alt="life"></li>
+			<li><img src="images/p_04.jpg" width="426" alt=""></li>
+			<li><img src="images/p_05.jpg" width="426" alt="landscape"></li>
+			<li><img src="images/p_06.jpg" width="426" alt="Flower"></li>
+			<li><img src="images/li_02.jpg" width="426" alt="life"></li>
+			<li><img src="images/a_02.jpg" width="426" alt="animal"></li>
+			<li><img src="images/l_09.jpg" width="426" alt="landscape"></li>
+		</ul>
+	</section>
+	<!-- // GALLERY -->
+
+<!-- menu -->
+
+<section id="menu">
+	<div class="menu-flex">
+		
+		<section class="m_wrapper">
+			<a href="landscape/index.html"><img src="images/l_07.jpg" alt="landscape">
+				<h3>Landscape</h3></a>
+		</section>
+
+		<section class="m_wrapper">
+			<a href="#"><img src="images/s_01.jpg"  alt="Sky">
+				<h3>Sky</h3></a>
+		</section>
+
+		<section class="m_wrapper">
+			<a href="#"><img src="images/f_01.jpg" alt="Flower">
+			<h3>Flower</h3></a>
+		</section>
+
+
+		<section class="m_wrapper">
+			<a href="#"><img src="images/m_03.jpg" alt="Animal">
+				<h3>Animal</h3></a>
+		</section>
+
+		<section class="m_wrapper">
+			<a href="#"><img src="images/li_03.jpg"  alt="Life">
+				<h3>Life</h3></a>
+		</section>
+
+		<section class="m_wrapper">
+			<a href="#"><img src="images/art_01.jpg" alt="Art">
+			<h3>Art</h3></a>
+		</section>
+	</div>
+</section>
+
+
+<!-- // menu end -->
+</div><!-- container -->
+</main>
+
+<footer id="footer">
+	<div class="f_wrapper">
+		<ul>
+			<li><i class="fab fa-facebook"></i></i></li>
+			<li><i class="fab fa-twitter-square"></i></li>
+			<li><i class="fab fa-instagram"></i></li>
+			<li><i class="fab fa-pinterest-p"></i></li>
+			<li><i class="fab fa-github"></i></li>
+		</ul>
+	
+	<small>&copy2020 PhotoStock. All Rights Reserved. </small>
+	</div>	
+</footer>
+</body>
