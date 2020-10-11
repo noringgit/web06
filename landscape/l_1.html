@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="photostock">
+    <meta name="description" content="photo">
+    <meta name="keywords" content="photo">
+    <title>PHOTOSTOCK | Landscape | </title>
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+
+</head>
+    <body id="top">
+        <!-- HTMLで、<canvas>要素の幅と高さ、および、id名を指定する -->
+        <canvas id="color" width="10" height="7">
+		図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+	</canvas>
+
+
+        <!-- //HEADER -->
+        <header class="header">
+
+
+            <div class="logo">
+                <a href="../index.html">
+                    <h1><i class="fa fa-camera-retro"></i>&nbsp;PhotoStock</h1>
+                </a>
+            </div>
+
+            <!----------- ハンバーガーメニュー部分 --------------------->
+            <div class="drawer">
+
+
+                <!-- ハンバーガーメニューチェックボックス非表示 -->
+                <input type="checkbox" id="drawer-check" class="drawer-hidden">
+
+                <!-- ハンバーガーアイコン -->
+                <label for="drawer-check" class="drawer-open">
+				<span></span>
+			</label>
+
+
+                <!-- ドロアーメニュー -->
+                <nav class="drawer-content">
+                    <ul class="drawer-list">
+                        <li class="drawer-item"><a href="../index.html">|&nbsp;TOP&nbsp;|</a></li>
+                        <li class="drawer-item">&nbsp;</li>
+                        <li class="drawer-item"><a href="index.html">Landscape</a>
+                        </li>
+                        <li class="drawer-item"><a href="#">Sky</a>
+                        </li>
+                        <li class="drawer-item"><a href="#">Flower</a>
+                        </li>
+                        <li class="drawer-item"><a href="#">Animal</a>
+                        </li>
+                        <li class="drawer-item"><a href="#">Life</a>
+                        </li>
+                        <li class="drawer-item"><a href="#">Art</a>
+                        </li>
+                        <li class="drawer-item">&nbsp;</li>
+                        <li class="drawer-item"><a href="#">|&nbsp;FAQ&nbsp;|</a></li>
+                        <li class="drawer-item"><a href="../about/index.html">|&nbsp;PhotoStockについて&nbsp;|</a></li>
+                        <li class="drawer-item"><a href="#">|&nbsp;プライバシーポリシー&nbsp;|</a></li>
+                        <li class="drawer-item">&nbsp;</li>
+                        <li class="drawer-item"><a href="#">|&nbsp;ログイン&nbsp;|</a></li>
+
+                        <li class="drawer-item"><a href="#">*はじめての方はこちら*</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!----------- ハンバーガーメニュー部分 end --------------------->
+
+
+
+            <!-- canvas生成（非表示） -->
+            <canvas id="color" width="10" height="7">
+				図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+			</canvas>
+
+
+            <!-- カラーバー -->
+            <div class="colorbar">
+                <div id="c0" class="c_item"></div>
+                <div id="c1" class="c_item"></div>
+                <div id="c2" class="c_item"></div>
+                <div id="c3" class="c_item"></div>
+                <div id="c4" class="c_item"></div>
+                <div id="c5" class="c_item"></div>
+                <div id="c6" class="c_item"></div>
+                <div id="c7" class="c_item"></div>
+                <div id="c8" class="c_item"></div>
+                <div id="c9" class="c_item"></div>
+            </div>
+
+
+        </header>
+
+        <!-- //HEADER -->
+
+        <main>
+            <div id="container" ontouchstart="">
+                <!-- スマホ対応 -->
+
+                <!-- Landscape -->
+                <section id="land">
+                    <h2><a href="index.html"><i class="fa fa-tree"></i>Landscape</a></h2>
+
+                    <ul class="fa-ul">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-sticky-note fa-fw"></i></span>sunset01, Size: 3000 × 6000 pixel (336KB)
+                        </li>
+                    </ul>
+
+                    <!-- 写真 -->
+                    <img src="../images/l_01.jpg" width="426" alt="photo" id="bigphoto">
+                    <div class="text">
+                        <ul class="fa-ul">
+                            <li>
+                                <a href="#"><span class="fa-li"><i class="fas fa-download fa-fw"></i></span>Download</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- // Landscape -->
+            </div>
+            <!-- //container -->
+        </main>
+
+        <footer id="footer">
+            <div class="f_wrapper">
+                <ul>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-twitter-square"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-pinterest-p"></i></li>
+                    <li><i class="fab fa-github"></i></li>
+                </ul>
+
+                <small>&copy;2020 PhotoStock. All Rights Reserved. </small>
+            </div>
+        </footer>
+        <script src="../js/script.js"></script>
+    </body>
+
+</html>
